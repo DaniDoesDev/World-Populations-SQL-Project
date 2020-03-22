@@ -1,0 +1,35 @@
+-- This is the first query:
+
+-- SELECT DISTINCT year from population_years;
+
+-- Add your additional queries below:
+
+-- Find Gabon's lowest pop size
+SELECT *
+FROM population_years
+WHERE country = 'Gabon'
+ORDER BY population DESC
+LIMIT 1;
+
+-- Find the 10 lowest pop countries in 2005
+SELECT *
+FROM population_years
+WHERE year = 2005
+ORDER BY population
+LIMIT 10;
+
+-- Find all countries with a pop over 100 million in 2010
+SELECT *
+FROM population_years
+WHERE year = 2010 AND population > 100;
+
+-- Find all countries with "Island" in their name
+SELECT DISTINCT country
+FROM population_years
+WHERE country LIKE '%Islands%';
+
+-- Find difference in pop b/w 2000 and 2010 in Indonesia
+SELECT *
+FROM population_years
+WHERE country = 'Indonesia' AND year = 2000
+OR country = 'Indonesia' AND year = 2010;
